@@ -254,8 +254,8 @@ func checkSloppy(pass *analysis.Pass, origStruct *types.Struct) result {
 		optStruct: optStruct,
 		optIdx:    idx,
 	}
-	r.oldRuntimeSize = int64(roundUpSize(uintptr(r.oldGcSize)))
-	r.newRuntimeSize = int64(roundUpSize(uintptr(r.newGcSize)))
+	r.oldRuntimeSize = int64(roundUpSize(uintptr(r.oldGcSize), false))
+	r.newRuntimeSize = int64(roundUpSize(uintptr(r.newGcSize), false))
 	return r
 }
 
